@@ -1,0 +1,651 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kota Gowtham - AI/ML Engineer Portfolio">
+    <meta name="author" content="Kota Gowtham">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.pagepiling.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      /* Background image switch */
+      #home {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 768px) {
+        #home {
+          background-image: url('img/bg/personal5.png');
+        }
+      }
+      @media (min-width: 769px) {
+        #home {
+          background-image: url('img/bg/personal4.png');
+        }
+      }
+      /* Navbar and mobile menu styles */
+      .navbar-mobile {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      .navbar-mobile.active {
+        display: block;
+        transform: translateX(0);
+      }
+      .navbar-mobile .close {
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .navbar-mobile ul {
+        list-style: none;
+        padding: 0;
+        margin: 40px 0 0 0;
+      }
+      .navbar-mobile ul li a {
+        display: block;
+        padding: 15px 0;
+        color: #000;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Project section responsiveness is handled by Owl Carousel */
+      .project-item figure {
+        margin: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+      .project-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+        object-fit: cover;
+      }
+      .project-item:hover img {
+        transform: scale(1.05);
+      }
+      .project-item figcaption {
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.7);
+        min-height: 120px;
+      }
+      /* Modal popup styles */
+      .mfp-hide {
+        display: none !important;
+      }
+      .zoom-anim-dialog {
+        max-height: 80vh; /* Limit modal height to 80% of viewport */
+        overflow-y: auto; /* Enable vertical scrolling */
+        padding: 20px;
+      }
+    </style>
+
+    <title>Kota Gowtham - AI/ML Engineer</title>
+  </head>
+<body class="fullpage">
+    
+   <div class="loader">
+    <div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
+   </div>
+
+    <div class="click-capture"></div>
+
+   <nav id="scrollspy" class="navbar navbar-desctop">
+      <div class="d-flex position-relative w-100">
+        <a class="navbar-brand" href="#">Kota Gowtham</a>
+        <ul class="social-icons mr-auto mr-lg-0 d-none d-sm-block">
+            <li><a href="https://linkedin.com/in/gowthamharshakota"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/SriHarsha339"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+        <span class="phone h6 my-0 d-none d-md-block">+91 9491753567</span>
+        <button class="toggler ml-auto" id="menuToggler">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+   <nav id="navbar-mobile" class="navbar navbar-mobile">
+      <ion-icon class="close" name="close-outline" id="menuClose"></ion-icon>
+      <ul class="social-icons mr-auto mr-lg-0">
+         <li><a href="https://linkedin.com/in/gowthamharshakota"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+         <li><a href="https://github.com/SriHarsha339"><ion-icon name="logo-github"></ion-icon></a></li>
+      </ul>
+      <br>
+      <ul class="navbar-nav navbar-nav-mobile">
+        <!-- Updated anchors to match requested URL fragments -->
+        <li class="active"><a class="nav-link" data-menuanchor="home" href="#home">Home</a></li>
+        <li><a class="nav-link" data-menuanchor="about" href="#about">About</a></li>
+        <!-- Education & Experience should be at #video -->
+        <li><a class="nav-link" data-menuanchor="video" href="#video">Experience</a></li>
+        <!-- Technical skills section moved to #experience -->
+        <li><a class="nav-link" data-menuanchor="experience" href="#experience">Skills</a></li>
+        <!-- Projects should be at #specialization -->
+        <li><a class="nav-link" data-menuanchor="specialization" href="#specialization">Projects</a></li>
+      </ul>
+   </nav>
+
+    <div id="pagepiling">
+
+      <section id="home" class="navbar-is-white text-white pp-scrollable d-flex align-items-center section position-absolute">
+        <div class="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-lg-5">
+                <h1 class="text-white"><span class="text-primary">Kota</span> Gowtham</h1>
+                <p class="lead mt-4 mb-5">AI / ML Engineer passionate about developing intelligent systems, optimizing inference pipelines, and integrating LLM-based solutions.</p>
+                <button type="button" class="btn" data-toggle="modal" data-target="#send-request">Let's Talk</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section pp-scrollable d-flex align-items-center position-absolute">
+        <div class="intro">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <h3 class="text-uppercase">Hi, I’m <span class="text-primary">Kota Gowtham</span></h3>
+                <div class="mt-5 pt-2">
+                  <p>Final-year B.Tech student in Computer Science and Business Systems at R.V.R. & J.C. College of Engineering (CGPA: 8.5). I focus on AI/ML engineering, building Python-driven intelligent systems, integrating LLMs, and optimizing inference using CUDA.</p>
+                  <div class="mt-5 experience d-flex align-items-center">
+                    <div class="experience-number v2"><span class="position-relative">2</span></div>
+                    <div class="text-dark mt-3 ml-4">Years<br>of hands-on project experience</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5 offset-lg-2 offset-md-1 mt-4">
+                <h6>Python & ML Frameworks</h6>
+                <div class="progress mb-4">
+                  <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                </div>
+                <h6>Flask & API Development</h6>
+                <div class="progress mb-4">
+                  <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                </div>
+                <h6>CUDA Optimization</h6>
+                <div class="progress mb-4">
+                  <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                </div>
+                <h6>Prompt Engineering & LLMs</h6>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Changed id from "experience" to "video" so #video points here -->
+      <section id="video" class="section pp-scrollable d-flex align-items-center position-absolute">
+        <div class="intro">
+          <div class="container">
+            <h2><span class="text-primary">Education</span> & Experience.</h2>
+            <div class="mt-5 pt-5">
+              <div class="row-experience row justify-content-between">
+                <div class="col-md-4">
+                  <div class="h6 my-0 text-gray">May 2025 – Jun 2025</div>
+                  <h5 class="mt-2 text-primary text-uppercase">4Sight AI</h5>
+                </div>
+                <div class="col-md-4">
+                  <h5 class="mb-3 mt-0 text-uppercase">ML Technical Associate</h5>
+                </div>
+                <div class="col-md-4">
+                  <p>Integrated AI-assisted pipelines into workflows for the Andhra Pradesh Police Department to automate image and caption generation, reducing design turnaround by 25%.</p>
+                </div>
+              </div>
+              <div class="row-experience row justify-content-between">
+                <div class="col-md-4">
+                  <div class="h6 my-0 text-gray">2022 – 2026</div>
+                  <h5 class="mt-2 text-primary text-uppercase">R.V.R. & J.C. College of Engineering</h5>
+                </div>
+                <div class="col-md-4">
+                  <h5 class="mb-3 mt-0 text-uppercase">B.Tech, CSBS</h5>
+                </div>
+                <div class="col-md-4">
+                  <p>Currently pursuing a B.Tech with 8.5 CGPA. Focused on AI/ML, data-driven solutions, and computational optimization.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Changed id from "services" to "experience" so #experience points to technical skills -->
+      <section id="experience" class="navbar-is-white section pp-scrollable d-flex align-items-center position-absolute bg-dark">
+        <div class="intro">
+          <div class="container">
+            <h2 class="text-white"><span class="text-primary">My</span> Technical Skills.</h2>
+            <div class="mt-5 pt-5">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <ion-icon class="text-white" name="code-slash-outline"></ion-icon>
+                  <h6 class="text-white">Programming & Libraries</h6>
+                  <p>Python, NumPy, Pandas, PyTorch, Hugging Face Transformers</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <ion-icon class="text-white" name="construct-outline"></ion-icon>
+                  <h6 class="text-white">AI / ML Tools</h6>
+                  <p>LLM Fine-Tuning, Inference Optimization, CUDA Acceleration</p>
+                </div>
+                <div class="col-md-4">
+                  <ion-icon class="text-white" name="server-outline"></ion-icon>
+                  <h6 class="text-white">Backend & Tools</h6>
+                  <p>Flask, REST API Design, Docker, GitHub, VS Code, Linux</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- 
+       <section id="Projects" class="section pp-scrollable d-flex align-items-center position-absolute bg-light">
+        <div class="intro">
+          <div class="container">
+            <h2><span class="text-primary">Latest</span> Projects.</h2>
+            <div class="mt-5 pt-4">
+            <div class="carousel-project owl-carousel">
+             <div class="project-item">
+                <a href="#project1" class="popup-with-zoom-anim">
+                  <figure class="position-relative">
+                    <img alt="" class="w-100" src="img/portfolio/1140x641-1.jpg">
+                    <figcaption class="text-white">
+                      <h3 class="mb-2 text-white">Neuro</h3>
+                      <p>Branding</p>
+                    </figcaption>
+                  </figure>
+                </a>
+             </div>
+              <div class="project-item">
+                <a href="#project2" class="popup-with-zoom-anim">
+                  <figure class="position-relative">
+                    <img alt="" class="w-100" src="img/portfolio/1140x641-2.jpg">
+                    <figcaption class="text-white">
+                      <h3 class="mb-2 text-white">Unero</h3>
+                      <p>Illustration</p>
+                    </figcaption>
+                  </figure>
+                </a>
+             </div>
+              <div class="project-item">
+                <a href="#project3" class="popup-with-zoom-anim">
+                  <figure class="position-relative">
+                    <img alt="" class="w-100" src="img/portfolio/1140x641-3.jpg">
+                    <figcaption class="text-white">
+                      <h3 class="mb-2 text-white">Guino</h3>
+                      <p>Branding</p>
+                    </figcaption>
+                  </figure>
+                </a>
+             </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="project1" class="container mfp-hide zoom-anim-dialog">
+        <h2 class="mt-0">Neuro</h2>
+        <div class="mt-5 pt-2 text-dark">
+          <div class="row">
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Category:</h6>
+              <span>Branding</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Tech Stack:</h6>
+              <span>Python, Flask, Hugging Face</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Completion:</h6>
+              <span>Oct 2024</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Author:</h6>
+              <span>Kota Gowtham</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>Developed a branding solution using AI-driven design tools, enhancing visual identity with automated generation.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quod, aspernatur. Est, id, eius, eveniet. Ullam, eaque, expedita, similique, nobis cumque sapiente sedo non esse hic vero. Over, possimus, quasi, natos, sit quasi enim ab voluptate cumque quos. Iste, nam, natus, earum, laboriosam quis iste eaque. Earum, natus, placeat, distinctio, possimus, iusto,Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)</p>
+            </div>
+          </div>
+        </div>
+        <img alt="" class="mt-5 pt-2 w-100" src="img/portfolio/1140x641-1.jpg">
+      </div>
+
+      <div id="project2" class="container mfp-hide zoom-anim-dialog">
+        <h2 class="mt-0">Unero</h2>
+        <div class="mt-5 pt-2 text-dark">
+          <div class="row">
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Category:</h6>
+              <span>Illustration</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Tech Stack:</h6>
+              <span>Python, PyTorch</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Completion:</h6>
+              <span>Nov 2024</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Author:</h6>
+              <span>Kota Gowtham</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>Created an illustration system using ML models to generate unique artwork, optimized for performance.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quod, aspernatur. Est, id, eius, eveniet. Ullam, eaque, expedita, similique, nobis cumque sapiente sedo non esse hic vero. Over, possimus, quasi, natos, sit quasi enim ab voluptate cumque quos. Iste, nam, natus, earum, laboriosam quis iste eaque. Earum, natus, placeat, distinctio, possimus, iusto,Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)</p>
+            </div>
+          </div>
+        </div>
+        <img alt="" class="mt-5 pt-2 w-100" src="img/portfolio/1140x641-2.jpg">
+      </div>
+
+      <div id="project3" class="container mfp-hide zoom-anim-dialog">
+        <h2 class="mt-0">Guino</h2>
+        <div class="mt-5 pt-2 text-dark">
+          <div class="row">
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Category:</h6>
+              <span>Branding</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Tech Stack:</h6>
+              <span>Python, CUDA</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Completion:</h6>
+              <span>Dec 2024</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Author:</h6>
+              <span>Kota Gowtham</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>Designed a branding tool with AI optimization, improving design efficiency by 30%.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quod, aspernatur. Est, id, eius, eveniet. Ullam, eaque, expedita, similique, nobis cumque sapiente sedo non esse hic vero. Over, possimus, quasi, natos, sit quasi enim ab voluptate cumque quos. Iste, nam, natus, earum, laboriosam quis iste eaque. Earum, natus, placeat, distinctio, possimus, iusto,Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)Sunt, culpa, quos, assumenda, amet, iusto, possimus. Quos, ab, veritatis, labore, quod, similique, quidem nostrum et? Iure, natus, eaque, (vero) obcaecati, (dolore)</p>
+            </div>
+          </div>
+        </div>
+        <img alt="" class="mt-5 pt-2 w-100" src="img/portfolio/1140x641-3.jpg">
+      </div> -->
+      <section id="projects" class="section pp-scrollable d-flex align-items-center position-absolute bg-light">
+        <div class="intro">
+          <div class="container">
+            <h2><span class="text-primary">Latest</span> Projects.</h2>
+            <div class="mt-5 pt-4">
+              <div class="carousel-project owl-carousel">
+      
+                <!-- Project 1 -->
+                <div class="project-item">
+                  <a href="#project1" class="popup-with-zoom-anim">
+                    <figure class="position-relative">
+                      <img alt="Vision Captioning Model 2" class="w-100" src="img/portfolio/captions.webp">
+                      <figcaption class="text-white">
+                        <h3 class="mb-2 text-white">Vision Captioning Model 2</h3>
+                        <p>Deep Learning | TensorFlow | Computer Vision</p>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+      
+                <!-- Project 2 -->
+                <div class="project-item">
+                  <a href="#project2" class="popup-with-zoom-anim">
+                    <figure class="position-relative">
+                      <img alt="Multilingual Text-to-Image Generation 2" class="w-100" src="img/portfolio/image-gen.jpeg">
+                      <figcaption class="text-white">
+                        <h3 class="mb-2 text-white">Multilingual Text-to-Image Generation 2</h3>
+                        <p>Python | Flask | Hugging Face | CUDA</p>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Project 1 Modal -->
+      <div id="project1" class="container mfp-hide zoom-anim-dialog">
+        <h2 class="mt-0">Vision Captioning Model 2</h2>
+        <div class="mt-5 pt-2 text-dark">
+          <div class="row">
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Category:</h6>
+              <span>Computer Vision</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Tech Stack:</h6>
+              <span>TensorFlow, RNN/Seq2Seq, Flickr8K, gTTS</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Completion:</h6>
+              <span>Feb 2025 – Apr 2025</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Author:</h6>
+              <span>Kota Gowtham</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>
+                Tackled the challenge of generating human-like captions for images using deep learning techniques.
+                Implemented an attention-based model inspired by <strong>Show, Attend and Tell</strong> using TensorFlow 2.0.
+                Built scalable data pipelines for preprocessing, model training, and deployment, and integrated
+                <strong>Google Text-to-Speech (gTTS)</strong> for accessibility.
+              </p>
+              <p>
+                Achieved an 18% improvement in BLEU score compared to baseline models.
+                This model was later adopted by peers for accessibility testing and UI design validation workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img alt="Vision Captioning Model Screenshot" class="mt-5 pt-2 w-100" src="img/portfolio/captions.webp">
+      </div>
+      
+      <!-- Project 2 Modal -->
+      <div id="project2" class="container mfp-hide zoom-anim-dialog">
+        <h2 class="mt-0">Multilingual Text-to-Image Generation 2</h2>
+        <div class="mt-5 pt-2 text-dark">
+          <div class="row">
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Category:</h6>
+              <span>Generative AI</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Tech Stack:</h6>
+              <span>Python, Flask, Hugging Face, CUDA, REST API</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Completion:</h6>
+              <span>Oct 2024 – Nov 2024</span>
+            </div>
+            <div class="mb-5 col-md-6 col-lg-3">
+              <h6 class="my-0">Author:</h6>
+              <span>Kota Gowtham</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>
+                Developed an end-to-end <strong>REST API service</strong> capable of converting multilingual text prompts into
+                AI-generated images using state-of-the-art transformer models.
+                Implemented <strong>batching and caching mechanisms</strong> to reduce generation latency by 40%.
+              </p>
+              <p>
+                The model was adopted by <strong>6 peer designers</strong> and a <strong>research group</strong> to rapidly
+                prototype UI and concept art, cutting design iteration time by nearly two days.
+                Built with scalable deployment using Flask and CUDA optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img alt="Multilingual Text-to-Image Generation Screenshot" class="mt-5 pt-2 w-100" src="img/portfolio/image-gen.jpeg">
+      </div>
+      
+    <div class="modal fade" id="send-request">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title mt-0">Send Message</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p>Leave your details and I’ll get back to you soon.</p>
+            <form class="form-request js-ajax-form" action="mailto:harshakota339@gmail.com" method="post" enctype="text/plain">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" required placeholder="Email *">
+              </div>
+              <div class="form-group">
+                <textarea rows="3" name="message" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group mb-0 text-right">
+                <button type="submit" class="btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/jarallax.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.pagepiling.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/interface.js"></script>
+  <script>
+    // Menu toggle functionality with toggle-on-click and section navigation
+    let menuToggler = document.getElementById('menuToggler');
+    let menu = document.getElementById('navbar-mobile');
+    let menuClose = document.getElementById('menuClose');
+    let navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggler.addEventListener('click', function() {
+      menu.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    menuClose.addEventListener('click', function() {
+      menu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        menu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        // Smooth scroll to section using pagepiling
+        if (typeof $.fn.pagepiling === 'function') {
+          $.fn.pagepiling.moveTo(link.getAttribute('data-menuanchor'));
+        }
+      });
+    });
+
+    // Click outside to close menu
+    document.addEventListener('click', function(event) {
+      if (!menu.contains(event.target) && !menuToggler.contains(event.target) && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Initialize Owl Carousel for projects
+    $(document).ready(function() {
+      $('.carousel-project').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          769: {
+            items: 2
+          },
+          1200: {
+            items: 3
+          }
+        }
+      });
+
+      // Initialize Magnific Popup for project modals with scrolling fix
+      $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'scroll', // Ensure scrolling is enabled
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        callbacks: {
+          open: function() {
+            // Disable pagepiling scrolling when modal opens
+            if ($.fn.pagepiling && $.fn.pagepiling.setAllowScrolling) {
+              $.fn.pagepiling.setAllowScrolling(false);
+              $.fn.pagepiling.setKeyboardScrolling(false);
+            }
+            // Ensure body scrolling is enabled for modal
+            $('body').css('overflow', 'auto');
+          },
+          close: function() {
+            // Re-enable pagepiling scrolling when modal closes
+            if ($.fn.pagepiling && $.fn.pagepiling.setAllowScrolling) {
+              $.fn.pagepiling.setAllowScrolling(true);
+              $.fn.pagepiling.setKeyboardScrolling(true);
+            }
+            // Restore body overflow to default
+            $('body').css('overflow', '');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
